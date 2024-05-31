@@ -22,7 +22,7 @@ export default function Nav1(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link" aria-current="page" to="/">Home</Link>
           {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
 
         </li>
@@ -30,24 +30,27 @@ export default function Nav1(props) {
           <Link className="nav-link" to="/about">{props.aboutTxt}</Link>
         </li>
       </ul>
-      {/* <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-primary" type="submit">Search</button>
-  </form> */}
 
 
-<div className={`form-check text-${props.mode2==='light'?'light':'dark'}`}>
-  <input className="form-check-input" type="radio" onClick={props.togmode2} name="flexRadioDefault" id="flexRadioDefault1"/>
-  <label className="form-check-label" for="flexRadioDefault1">
-  enable {props.mode2==='light'?'dark':'light'} mode
-  </label>
-</div>
+{/* aama diff diff color mode mukva hoi to */}
+{/* <div className="d-flex">
+        <div className="bg-primary rounded mx-3" onClick={()=>props.togmode('primary')}  cursu style={{height:'30px',width:'30px',cursor:'pointer'}}>
+        </div>
+        <div className="bg-danger rounded mx-3" onClick={()=>props.togmode('danger')}  cursu style={{height:'30px',width:'30px',cursor:'pointer'}}>
+        </div>
+        <div className="bg-success rounded mx-3" onClick={()=>props.togmode('success')}  cursu style={{height:'30px',width:'30px',cursor:'pointer'}}>
+          </div>
+        <div className="bg-warning rounded mx-3" onClick={()=>props.togmode('warning')}  cursu style={{height:'30px',width:'30px',cursor:'pointer'}}>
+        </div>
+  
+        
+</div> */}
 
 
 <div className={`form-check text-${props.mode==='light'?'dark':'light'}`}>
       {/* <div className={`form-check form-switch text-dark`}> */}
 
-  <input className="form-check-input" type="radio" onClick={props.togmode} name="flexRadioDefault" id="flexRadioDefault1"/>
+  <input className="form-check-input" type="radio" onClick={()=>props.togmode(null)} name="flexRadioDefault" id="flexRadioDefault1"/>
   <label className="form-check-label" htmlFor="flexRadioDefault1">
   enable {props.mode==='light'?'dark':'light'} mode
   </label>

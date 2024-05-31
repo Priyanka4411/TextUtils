@@ -18,8 +18,6 @@ function App() {
   const [mode, setMode] = useState('light');   //tell that where dark mode is enable or not
   const [alert, setAlert] = useState('null');
 
-  const [mode2, setMode2] = useState('light');
-
 
   const funAlert = (a, b) => {
     setAlert({
@@ -32,7 +30,11 @@ function App() {
   }
 
 
-  const togmode = () => {
+  const togmode = (cls) => {
+    // removeBodyClsses();
+  
+    console.log(cls)
+    document.body.classList.add('bg-'+cls)
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = 'gray'
@@ -62,27 +64,19 @@ function App() {
   }
 
 
-  const togmode2 = () => {
-    if (mode2 === 'light') {
-      setMode2('pink')
-      document.body.style.backgroundColor = 'pink'
-      document.body.style.color = 'white'
-
-      funAlert("darkmode is enable", "success")
-    }
-    else {
-      setMode2('light')
-      document.body.style.backgroundColor = 'white'
-
-      funAlert("lightmode is enable", "success")
-
-    }
-  }
-
+// const removeBodyClsses=()=>{
+//   document.body.classList.remove('bg-light')
+//   document.body.classList.remove('bg-dark')
+//   document.body.classList.remove('bg-warning')
+//   document.body.classList.remove('bg-danger')
+//   document.body.classList.remove('bg-success')
+//   // document.body.classList.remove('bg-')
+  
+// }    
   return (
     <>
         <BrowserRouter>
-<Nav1 titleTxt="TextUtils" aboutTxt="Aboutus" mode={mode} togmode={togmode} togmode2={togmode2} />
+<Nav1 titleTxt="TextUtils" aboutTxt="Aboutus" mode={mode} togmode={togmode}  />
 <Alert1 alert={alert} />
        
         <div className="container my-3" mode={mode}>
