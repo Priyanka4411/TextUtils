@@ -67,7 +67,7 @@ export default function Text1(props) {
             
 
                 <p>{0.008 * text.split(" ").filter((ele)=>{return ele.length!==0}).length} Minutes to read</p>
-                <h2>Preview</h2>
+                <h3>Preview</h3>
                 <p>{text.length>0 ? text:"enter somthing into textbox for priview it"}</p>
             </div>
 
